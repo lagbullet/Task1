@@ -1,17 +1,17 @@
 ﻿using System;
 
-public class Marks
+public class Mark
 {
     public String Subject;
-    public int Mark;
+    public int mark;
 
-	public Marks(String subj, int mark)
+	public Mark(String subj, int mrk)
 	{
         Subject = subj;
-        Mark = mark;
+        mark = mrk;
 	}
 
-    public void SetMark(int mark) => Mark = mark;
+    public void SetMark(int mrk) => mark = mrk;
 
     public void SetSubject(string Subj) => Subject = Subj;
 
@@ -22,6 +22,6 @@ public class Marks
 
     public int GetMark()
     {
-        return Mark;
+        return mark;
     }
 }

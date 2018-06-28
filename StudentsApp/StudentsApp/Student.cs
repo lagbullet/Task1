@@ -1,24 +1,24 @@
 ﻿using System;
 
-public class Students
+public class Student
 {
     public String SurName;
     public String FirstName;
     public String Patronymic;
     public String Birthdate;
-    public Marks[] Mark = new Marks[20];
+    public Mark[] Mark = new Mark[20];
     private int Mcount = 0;
 
-    public Students(String Sname, String Fname,String patronymic, String BthDate, String Subj, int mark)
+    public Student(String Sname, String Fname,String patronymic, String BthDate, String Subj, int mark)
     {
         SurName = Sname;
         FirstName = Fname;
         Birthdate = BthDate;
         Patronymic = patronymic;
-        Mark[Mcount++] = new Marks(Subj, mark);
+        Mark[Mcount++] = new Mark(Subj, mark);
     }
 
-    public Students(String Sname, String Fname, String patronymic, String BthDate)
+    public Student(String Sname, String Fname, String patronymic, String BthDate)
     {
         SurName = Sname;
         FirstName = Fname;
@@ -30,14 +30,14 @@ public class Students
     {
         float SumMarks = 0;
         for (int i = 0; i < Mcount; i++)
-            SumMarks += Mark[i].Mark;
+            SumMarks += Mark[i].mark;
         return SumMarks / Mcount;
     }
 
     public void ResetAllMarks()
     {
         for (int i = 0; i < Mcount; i++)
-            Mark[i].Mark = 0;
+            Mark[i].mark = 0;
     }
 
     public void Show()
@@ -50,7 +50,7 @@ public class Students
         for (int i = 0; i < Mcount; i++)
         {
             Console.WriteLine("Subject -> " + Mark[i].Subject);
-            Console.WriteLine("Mark -> " + Mark[i].Mark);
+            Console.WriteLine("Mark -> " + Mark[i].mark);
         }
     }
 
@@ -85,11 +85,11 @@ public class Students
     public void SetMark(String Subj, int mark)
     {
         if (Mcount < Mark.Length)
-            Mark[Mcount++] = new Marks(Subj, mark);
+            Mark[Mcount++] = new Mark(Subj, mark);
         else
         {
             Array.Resize(ref Mark, Mcount+10);
-            Mark[Mcount++] = new Marks(Subj, mark);
+            Mark[Mcount++] = new Mark(Subj, mark);
         }
     }
 

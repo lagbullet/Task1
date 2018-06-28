@@ -6,7 +6,7 @@ namespace StudentsApp
     {
         static void Main(string[] args)
         {
-            Students Student = new Students("SurName", "FirstName", "Patronymic", "2000-01-01");
+            Student Student = new Student("SurName", "FirstName", "Patronymic", "2000-01-01");
             Student.SetMark("subject1", 10);
             Student.SetMark("subject2", 8);
             Student.SetMark("subject3", 5);
